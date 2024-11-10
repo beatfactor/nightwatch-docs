@@ -10,6 +10,10 @@
         <% if (method.since) { %>
             <span class="since">Since: <%= method.since %></span>
         <% } %>
+
+        <% if (method.aliases && method.aliases.length > 0) { %>
+            <span class="alert alert-info alias">Aliases: <%- '<code>' + method.aliases.join('</code>, <code>') + '</code>' %></span>
+        <% } %>
     </div>
 
     <%- method.description %>
