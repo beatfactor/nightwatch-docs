@@ -8,8 +8,8 @@ also adding new capabilities over the classic `assert` interface.
 
 It uses a chain-able language to construct assertions given an element specified by a css/xpath selector. A simple example looks like the following:
 
-```javascript
-describe('expect example', function() {
+<div class="sample-test">
+<pre class="line-numbers" data-language="javascript"><code class="language-javascript">describe('expect example', function() {
   it('sample test', function (browser) {
     // start with identifying the element
     // and then assert the element is present
@@ -18,7 +18,8 @@ describe('expect example', function() {
     browser.expect.element('#main').to.be.visible;
   });
 }
-```
+</code></pre>
+</div>
 
 <h3 id="expect-chains">Language Chains</h3>
 
@@ -43,13 +44,14 @@ The following are provided as chainable getters to improve the readability of yo
 
 These methods will perform assertions on the specified target on the current element. The targets can be an attribute value, the element's inner text and a css property.
 
-```javascript
-this.demoTest = function (browser) {
+<div class="sample-test">
+<pre class="line-numbers" data-language="javascript"><code class="language-javascript">this.demoTest = function (browser) {
   browser.expect.element('#main').text.to.equal('The Night Watch');
   browser.expect.element('#main').text.to.contain('The Night Watch');
   browser.expect.element('#main').to.have.css('display').which.equals('block');
 };
-```
+</code></pre>
+</div>
 
 <div class="apimethod">
 <h3 id="expect-startend">.startWith(<code>value</code>)/.endWith(<code>value</code>)</h3>
