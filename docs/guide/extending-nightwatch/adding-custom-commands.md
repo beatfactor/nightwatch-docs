@@ -23,7 +23,7 @@ The command name is the name of the file itself.
 
 There are two main ways in which you can define a custom command:
 
-#### 1) Class-style commands
+#### 1. Class-style commands
 This is the recommended style of writing custom commands and it's also how most of the Nightwatch's own commands are written. Your command module needs to export a class constructor with a `command` instance method representing the command function. 
 
 All Nightwatch commands are asynchronous which means that custom commands must signal the completion (in the `command` method). This can be achieved in two ways:
@@ -192,6 +192,9 @@ Here's an example:
 </code></pre></div>
 
 #### 2. Function-style commands
+
+<p class="alert alert-warning">This style of writing custom-commands has now been <b>deprecated</b>. Use class-based approach instead.</p>
+
 This is a simpler form in which commands can be defined, however they are also quite limited.
 
 The command module needs to export a `command` function, which needs to call at least one Nightwatch api method (such as `.execute()`). This is due to a limitation of how the asynchronous queueing system of commands works. You can also wrap everything in a `.perform()` call. Client commands like `execute` and `perform` are available via `this`.
