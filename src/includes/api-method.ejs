@@ -18,7 +18,7 @@
 
     <%- method.description %>
 
-    <% if (method.api === 'https://nightwatchjs.org/guide/cdp') { %>
+    <% if (method.api === 'protocol.cdp') { %>
         <p class="alert alert-warning"><code><%- method.name %>()</code> is only available when using Chrome or Edge drivers.</p>
     <% } %>
 
