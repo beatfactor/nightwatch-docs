@@ -2,6 +2,28 @@
   function activeLink(urlPart) {
     return page.url.includes(urlPart) ? 'active' : '';
   }
+
+
+    // Get the button and menu elements
+    const releaseButton = document.getElementById('releaseVersionButton');
+    const releaseMenu = document.getElementById('releaseVersionMenu');
+    const arrowIcon = document.getElementById('arrowIcon').querySelector('path');
+  
+    // Add a click event listener to the button
+    releaseButton.addEventListener('click', function() {
+      // Toggle menu visibility
+      if (releaseMenu.style.display === 'none') {
+        releaseMenu.style.display = 'block';
+        // Change the arrow to point upwards
+        arrowIcon.setAttribute('d', 'M1.41421 7.01562H10.5858C11.4767 7.01562 11.9229 5.93848 11.2929 5.30852L6.70711 0.72273C6.31658 0.33221 5.68342 0.33221 5.29289 0.72273L0.707105 5.30852C0.0771403 5.93848 0.523309 7.01562 1.41421 7.01562Z'); // Up arrow
+      } else {
+        releaseMenu.style.display = 'none';
+        // Change the arrow back to pointing downwards
+        arrowIcon.setAttribute('d', 'M10.5858 0.984375H1.41421C0.523309 0.984375 0.0771403 2.06152 0.707105 2.69148L5.29289 7.27727C5.68342 7.66779 6.31658 7.66779 6.70711 7.27727L11.2929 2.69148C11.9229 2.06152 11.4767 0.984375 10.5858 0.984375Z'); // Down arrow
+      }
+    });
+
+  
 %>
   <header class="header" id="header">
     <nav class="navigation" aria-label="navigation">
@@ -153,20 +175,24 @@
               </g>
             </svg>
           </a></li>
-        <li class="release-button-action"><button type="button" id="releaseVersionButton" aria-controls="releaseVersionMenu" aria-haspopup="true"><%= version %><svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path
-                d="M10.5858 0.984375H1.41421C0.523309 0.984375 0.0771403 2.06152 0.707105 2.69148L5.29289 7.27727C5.68342 7.66779 6.31658 7.66779 6.70711 7.27727L11.2929 2.69148C11.9229 2.06152 11.4767 0.984375 10.5858 0.984375Z"
-                fill="white" />
-            </svg>
-          </button>
-          <ul id="releaseVersionMenu" role="menu" aria-labelledby="releaseVersionButton">
-            <li role="menuitem"><a href="/v26/">Previous 2.6.19
-              </a></li>
-            <li role="menuitem"><a href="/v17/">Version 1.7</a></li>
-            <li role="menuitem"><a href="/v09/">Version 0.9</a></li>
-            <li role="menuitem"><a href="/guide/overview/whats-new.html">All versions</a></li>
-          </ul>
-        </li>
+          <li class="release-button-action">
+            <button type="button" id="releaseVersionButton" aria-controls="releaseVersionMenu" aria-haspopup="true">
+              <%= version %>
+              <svg id="arrowIcon" width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M10.5858 0.984375H1.41421C0.523309 0.984375 0.0771403 2.06152 0.707105 2.69148L5.29289 7.27727C5.68342 7.66779 6.31658 7.66779 6.70711 7.27727L11.2929 2.69148C11.9229 2.06152 11.4767 0.984375 10.5858 0.984375Z"
+                  fill="white" />
+              </svg>
+            </button>
+          
+            <ul id="releaseVersionMenu" role="menu" aria-labelledby="releaseVersionButton" style="display: none;">
+              <li role="menuitem"><a href="/v26/">Previous 2.6.19</a></li>
+              <li role="menuitem"><a href="/v17/">Version 1.7</a></li>
+              <li role="menuitem"><a href="/v09/">Version 0.9</a></li>
+              <li role="menuitem"><a href="/guide/overview/whats-new.html">All versions</a></li>
+            </ul>
+          </li>
+          
       </ul>
       <button class="navigation-menu-toggle" id="mobileMenuToggle" aria-label="Mobile menu Button">
         <svg viewBox="0 0 12 10" class="hamburger" height="20px" width="20px">

@@ -40,6 +40,7 @@ export default {
     layouts: ['**/example-*.ejs']
   },
 
+
   apidocs: {
     source: API_DOCS_FOLDER,
     layout: 'api/index.ejs',
