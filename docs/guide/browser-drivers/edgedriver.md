@@ -34,7 +34,7 @@ Run your Nightwatch.js tests in Edge can be achieved using the  [Microsoft Edge 
 
 ### Learn more
 
-For more information about the Microsoft Edge WebDriver refer to the [Official documentation](https://developer.microsoft.com/en-us/microsoft-edge/platform/documentation/dev-guide/tools/webDriver/).
+For more information about the Microsoft Edge WebDriver refer to the [Official documentation](https://learn.microsoft.com/en-us/microsoft-edge/webdriver-chromium/?tabs=c-sharp).
 
 <div class="doc-pagination pt-40">
   <div class="previous">
