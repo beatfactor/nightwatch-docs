@@ -36,7 +36,7 @@ In the next screen, select `Node` from the list
 #### Step 2 : Update the config.yml file, commit and run the pipeline
 Now you will view the config.yml file that you can edit. Copy the below file contents into the file
 
-<pre><code class="yml"># This config is equivalent to both the '.circleci/extended/orb-free.yml' and the base '.circleci/config.yml'
+<pre class="nocode-space"><code class="yml"># This config is equivalent to both the '.circleci/extended/orb-free.yml' and the base '.circleci/config.yml'
 version: 2.1
 
 # Orbs are reusable packages of CircleCI configuration that you may share across projects, enabling you to create encapsulated, parameterized commands, jobs, and executors that can be used across multiple projects.

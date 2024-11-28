@@ -11,7 +11,7 @@ const content = [...pageContent.matchAll(/<h3[^>]*id="([^"]+)".*?>(?:<a[^>]*>([^
     <h5>On this page</h5>
     <nav class="main-side-nav">
         <% content.forEach(({ id, title }) => { %>
-            <a href="#<%= id %>" class="nav-link"><%= title %></a>
+            <a href="#<%= id %>" class="nav-link"><%- title %></a>
         <% }) %>
     </nav>
     <h5>Contribute</h5>

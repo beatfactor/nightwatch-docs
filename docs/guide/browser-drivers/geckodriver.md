@@ -64,7 +64,7 @@ GeckoDriver can also be used as a standalone application. Usage steps are docume
 <br><br>
 ### Command line usage
 
-<pre><code>$ ./bin/geckodriver-0.23 -help
+<pre class="plaintext"><code>$ ./bin/geckodriver-0.23 -help
 geckodriver 0.23.0
 
 USAGE:

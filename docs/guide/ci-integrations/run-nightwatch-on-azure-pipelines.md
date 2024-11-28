@@ -47,7 +47,7 @@ You need to click on Node.js in order to configure its plugin. This will provide
 #### Step 4 : Configure azure-pipelines.yml file
 Now you have to review and write the steps inside the azure-pipelines.yml file to run your tests. 
 
-<pre><code class="yml"># Node.js
+<pre class="nocode-space"><code class="yml"># Node.js
 # Build a general Node.js project with npm.
 # Add steps that analyze code, save build artifacts, deploy, and more:
 # https://docs.microsoft.com/azure/devops/pipelines/languages/javascript

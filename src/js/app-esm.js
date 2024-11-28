@@ -308,7 +308,7 @@ const renderCodeTabs = () => {
 
 const updatePreStyle = () => {
   document.querySelectorAll('pre').forEach((preTag) => {
-    if (!preTag.classList.contains('line-numbers')) {
+    if (!preTag.classList.contains('line-numbers') && !preTag.classList.contains('nocode-space')) {
       preTag.classList.add('code-space');
     }
   });

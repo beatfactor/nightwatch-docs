@@ -13,23 +13,26 @@ Protractor was a popular end-to-end test framework for Angular and AngularJS app
 
 Install the [Nightwatch Angular schematic](https://github.com/nightwatchjs/nightwatch-schematics) to add Nightwatch to your Angular project.
 
-```bash
-ng add @nightwatch/schematics
-```
+<pre>
+<code class="language-bash">ng add @nightwatch/schematics
+</code>
+</pre>
 
 This will install Nightwatch, add different scripts to run Nightwatch, scaffold Nightwatch config, and test files. It also prompts you to remove Protractor from your project and reconfigure your default `ng e2e` command to use Nightwatch.
 
 You can now run Nightwatch with the following command:
 
-```bash
-ng e2e
-```
+<pre>
+<code class="language-bash">ng e2e
+</code>
+</pre>
 
 You can also use the following command to run Nightwatch alternatively.
 
-```bash
-ng run {your-project-name}:nightwatch-run
-```
+<pre>
+<code class="language-bash">ng run {your-project-name}:nightwatch-run
+</code>
+</pre>
 
 ### Next Steps
 
@@ -55,17 +58,21 @@ In e2e tests, one of the most common things to do in a webpage is to get one or 
 
 <span>Before: Protractor</span>
 
-```javascript
-// Find an element using a css selector.
+<pre>
+<code class="language-javascript">// Find an element using a css selector.
 element(by.css('.myclass'))
-```
+</code>
+</pre>
+
 
 <span>After: Nightwatch v2</span>
 
-```javascript
-// Find an element using a css selector.
+<pre>
+<code class="language-javascript">// Find an element using a css selector.
 element(by.css('.myclass'))
-```
+</code>
+</pre>
+
 
 ##### Getting multiple elements
 
@@ -73,27 +80,30 @@ If you need to access more than one element on the page, you must chain the .all
 
 <span>Before: Protractor</span>
 
-```javascript
-// Find elements using a css selector.
+<pre>
+<code class="language-javascript">// Find elements using a css selector.
 element.all(by.css('.myclass'))
-```
+</code>
+</pre>
+
 
 <span>After: Nightwatch v2</span>
 
-```javascript
-// Find mulltiple elements using a css selector.
+<pre>
+<code class="language-javascript">// Find mulltiple elements using a css selector.
 browser.findElements(by.css('.myclass'))
 
 // or simply:
 browser.findElements('.myclass')
-```
+</code>
+</pre>
 
 ##### Interaction with DOM Elements
 
 <span>Before: Protractor</span>
 
-```javascript
-// Click on the element
+<pre>
+<code class="language-javascript">// Click on the element
 element(by.css('button')).click()
 
 // Clear the text in an element (usually an input).
@@ -107,12 +117,13 @@ browser
   .actions()
   .mouseMove(element(by.id('my-id')))
   .perform()
-```
+</code>
+</pre>
 
 <span>After: Nightwatch v2</span>
 
-```javascript
-// Click on the element
+<pre>
+<code class="language-javascript">// Click on the element
 browser.click(element(by.css('button')))
 
 // or with default css selector as locate strategy:
@@ -133,7 +144,8 @@ browser
   .perform(function() {
     return this.actions().mouseMove(element(by.id('my-id')))
   })
-```
+</code>
+</pre>
 
 > You can learn more about working with DOM elements in our [official documentation](/guide/writing-tests/finding-interacting-with-dom-elements.html)
 
@@ -143,96 +155,123 @@ browser
 
 <span>Before: Protractor</span>
 
-```javascript
-const list = element.all(by.css('.custom-class'))
+<pre>
+<code class="language-javascript">const list = element.all(by.css('.custom-class'))
 expect(list.count()).toBe(3)
-```
+</code>
+</pre>
+
 
 <span>After: Nightwatch v2</span>
 
-```javascript
-expect.elements('.custom-class').count.to.equal(3);
-```
+
+<pre>
+<code class="language-javascript">expect.elements('.custom-class').count.to.equal(3);
+</code>
+</pre>
+
 
 #### Value
 
 <span>Before: Protractor</span>
 
-```javascript
-expect(element(by.css('input[name="first_name"]'))).getAttribute('value').toBe('foo')
-```
+<pre>
+<code class="language-javascript">expect(element(by.css('input[name="first_name"]'))).getAttribute('value').toBe('foo')
+</code>
+</pre>
+
 
 <span>After: Nightwatch v2</span>
 
-```javascript
-expect(element('input[name="first_name"]')).attribute('value').toEqual('foo');
-```
+
+<pre>
+<code class="language-javascript">expect(element('input[name="first_name"]')).attribute('value').toEqual('foo');
+</code>
+</pre>
+
 
 #### Text Content
 
 <span>Before: Protractor</span>
 
-```javascript
-// assert the element\'s text content is exactly the given text
+<pre>
+<code class="language-javascript">// assert the element\'s text content is exactly the given text
 expect(element(by.id('user-name')).getText()).toBe('John Doe')
-```
+</code>
+</pre>
+
 
 <span>After: Nightwatch v2</span>
 
-```javascript
-expect.element(by.id('user-name')).text.toEqual('John Doe');
-```
+<pre>
+<code class="language-javascript">expect.element(by.id('user-name')).text.toEqual('John Doe');
+</code>
+</pre>
+
 
 #### Visibility
 
 <span>Before: Protractor</span>
 
-```javascript
-// assert button is visible
+
+<pre>
+<code class="language-javascript">// assert button is visible
 expect(element(by.css('#main ul li a.first')).isDisplayed()).toBe(true)
-```
+</code>
+</pre>
+
 
 <span>After: Nightwatch v2</span>
 
-```javascript
-expect('#main ul li a.first').to.be.visible;
+<pre>
+<code class="language-javascript">expect('#main ul li a.first').to.be.visible;
 
 // The following will end the test:
 browser.assert.visible('#main ul li a.first');
 
 // However this will just log the failure and continue:
 browser.verify.visible('#main ul li a.first');
-```
+</code>
+</pre>
+
 
 #### Existence
 
 <span>Before: Protractor</span>
 
-```javascript
-// assert the spinner no longer exists
+<pre>
+<code class="language-javascript">// assert the spinner no longer exists
 expect(element(by.id('loading')).isPresent()).toBe(false)
-```
+</code>
+</pre>
+
 
 <span>After: Nightwatch v2</span>
 
-```javascript
-browser.assert.not.elementPresent(by.id('loading'))
-```
+<pre>
+<code class="language-javascript">browser.assert.not.elementPresent(by.id('loading'))
+</code>
+</pre>
+
 
 #### CSS
 
 <span>Before: Protractor</span>
 
-```javascript
-// assert #main ul li a.first has css style "block" for "display" property
+<pre>
+<code class="language-javascript">// assert #main ul li a.first has css style "block" for "display" property
 expect(element(by.css('#main ul li a.first')).getCssValue('display')).toBe('block')
-```
+</code>
+</pre>
+
 
 <span>After: Nightwatch v2</span>
 
-```javascript
-browser.assert.cssProperty(by.css('#main ul li a.first'), 'display', 'block');
-```
+<pre>
+<code class="language-javascript">browser.assert.cssProperty(by.css('#main ul li a.first'), 'display', 'block');
+</code>
+</pre>
+
 
 #### Navigating websites
 
@@ -240,24 +279,28 @@ When you need to visit a page in your test, you can use following code:
 
 <span>Before: Protractor</span>
 
-```javascript
-it('visits a page', () => {
+<pre>
+<code class="language-javascript">it('visits a page', () => {
   browser.get('/about')
   browser.navigate().forward()
   browser.navigate().back()
 })
-```
+</code>
+</pre>
+
 
 <span>After: Nightwatch v2</span>
 
-```javascript
-it('visits a page', () => {
+<pre>
+<code class="language-javascript">it('visits a page', () => {
   browser
     .navigateTo('/about')
     .forward()
     .back()
 })
-```
+</code>
+</pre>
+
 
 ### Questions or having issues?
 

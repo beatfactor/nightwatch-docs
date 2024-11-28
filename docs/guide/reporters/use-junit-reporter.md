@@ -35,11 +35,7 @@ Refer to the [CLI reference page](/guide/nightwatch-cli/command-line-options.htm
 The XML file name follows the pattern:
 
 <div class="hide-indicator"><pre>
-
-```
-<BROWSER>_<VERSION>__<testSuiteFileName>.xml
-```
-
+BROWSERNAME_VERSION__testSuiteFileName.xml
 </pre></div>
 
 ### Example
@@ -89,7 +85,7 @@ The JUnit XML report should have been generated in the local `tests_output` fold
 
 <div class="hide-indicator"><pre>
 
-```
+```xml
 <?xml version="1.0" encoding="UTF-8" ?>
 <testsuites errors="0"
             failures="0"
@@ -102,12 +98,10 @@ The JUnit XML report should have been generated in the local `tests_output` fold
     <testcase name="Search Nightwatch.js and check results" classname="duckDuckGo" time="2.007" assertions="3">
     </testcase>
   </testsuite>
-
 </testsuites>
-</pre>
 ```
-
-</pre></div>
+</pre>
+</div>
 
 ### Jenkins integration
 JUnit-formatted XML output integrates by default into Jenkins via the "Publish JUnit test result report" Post-build Action. 

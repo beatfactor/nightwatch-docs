@@ -5,7 +5,7 @@ description: Learn how to do write and execute Angular component tests in Nightw
 <div class="page-header"><h1>Angular component testing in Nightwatch</h1></div>
 
 ### Overview
-Angular component testing in Nightwatch is available using our official **[`@nightwatch/angular`][1]** plugin, It uses the Webpack DevServer under the hood. Requires Nightwatch 2.4+  
+Angular component testing in Nightwatch is available using our official **[`@nightwatch/angular`][https://github.com/nightwatchjs/nightwatch-plugin-angular]** plugin, It uses the Webpack DevServer under the hood. Requires Nightwatch 2.4+  
 
 <div style="text-align: center; max-width: 80%; margin-bottom: 30px; ">
 <a href="https://github.com/nightwatchjs/nightwatch-plugin-angular"><img class="github-embed" src="https://opengraph.githubassets.com/default/nightwatchjs/nightwatch-plugin-angular" alt="nightwatch-angular-plugin on Github" /></a>
@@ -91,15 +91,7 @@ The angular plugin uses webpack dev server to compile and render angular compone
 
 <div class="sample-test"><i>test/sampleTest.js</i><pre class="line-numbers language-javascript"><code class="language-javascript">it('Test Form Component', async function (browser) {
   const component = await browser.mountComponent('/src/components/Form.component');
-
   expect(component).text.to.equal('form-component works!');
 });
-</code></pre></div>
-
-
-
-
-
-
-
-[1]:	https://github.com/nightwatchjs/nightwatch-plugin-angular
+</code></pre>
+</div>

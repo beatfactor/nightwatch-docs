@@ -22,7 +22,7 @@ First step is to [download and setup Appium](https://appium.io/docs/en/about-app
 ### Configuration
 We can add configuration in Nightwatch to run our tests on mobile devices running locally against the Appium server:
 
-<div class="sample-test"><i>nightwatch.conf.js</i><pre class="hide-indicator line-numbers"><code>appium_ios: {
+<div class="sample-test"><i>nightwatch.conf.js</i><pre class="hide-indicator line-numbers"><code class="language-bash">appium_ios: {
   selenium: {
     host: 'localhost',
     port: 4723
@@ -53,7 +53,7 @@ You can find more details regarding capabilities and on [Appium docs](http://app
 
 Here is a demo test that searches for the term "Night Watch" on the [Rijks Museum](https://www.rijksmuseum.nl/en) website.
 
-<div class="sample-test"><i>tests/sampleTest.js</i><pre class="line-numbers"><code>describe('Nightwatch Website tests', function() {
+<div class="sample-test"><i>tests/sampleTest.js</i><pre class="line-numbers"><code class="language-bash">describe('Nightwatch Website tests', function() {
     <br>
     it('Searching the Rijksmuseum ', async function(){
     browser.navigateTo('https://www.rijksmuseum.nl/en');
@@ -89,7 +89,7 @@ These APIs are platform specific. You can refer more on this on [Appium docs](ht
 
 The [Actions API](/api/useractions/) is very general and platform independent. It relies on the concept of input sources (key, pointer, wheel). Following code generates a swipe and a pinch zoom gesture using Actions API:
 
-<div class="sample-test"><i>tests/sampleTest.js</i><pre class="line-numbers"><code>describe('W3C Actions API', function() {
+<div class="sample-test"><i>tests/sampleTest.js</i><pre class="line-numbers"><code class="language-bash">describe('W3C Actions API', function() {
   it('swipe down and zoom in the page - w3c actions api ', async function(){
     //Scroll down the page
     await  browser.perform(function(){

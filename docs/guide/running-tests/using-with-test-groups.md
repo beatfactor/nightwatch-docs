@@ -9,7 +9,7 @@ description: Learn how to group tests together for better organization of the te
 Nightwatch makes it possible to organize your test scripts into groups and run them as needed. To group tests together just place them in the same sub-folder. The folder name is the name of the group.
 
 ### Example
-<pre>
+<pre class="nocode-space">
 lib/
   ├── selenium-server-standalone.jar
 custom-commands/

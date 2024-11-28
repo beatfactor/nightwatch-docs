@@ -137,7 +137,8 @@ Here's how the output looks like when running the example tests in Firefox. You 
 </div>
 
 <div class="sample-test">
-<pre class="hide-indicator language-bash">ℹ Connected to GeckoDriver on port 4444 (1740ms).
+<pre>
+<code class="language-bash">ℹ Connected to GeckoDriver on port 4444 (1740ms).
 Using: firefox (92.0.1) on MAC (20.6.0).
 
 ..  ✔ Testing if the page title equals 'Rijksmuseum Amsterdam, home of the Dutch masters' (4ms)
@@ -146,11 +147,11 @@ Using: firefox (92.0.1) on MAC (20.6.0).
 ...  ✔ Testing if the page title equals 'Rijksmuseum Amsterdam, home of the Dutch masters' (8ms)
 .  ✔ Element <#rijksmuseum-app> was visible after 49 milliseconds.
 .  ✔ Testing if element <.search-results> contains text 'The Night Watch, Rembrandt van Rijn, 1642' (1427ms)
-.
 
-2 scenarios (2 passed)
-10 steps (10 passed)
-0m13.024s (executing steps: 0m12.998s)
+    2 scenarios (2 passed)
+    10 steps (10 passed)
+    0m13.024s (executing steps: 0m12.998s)
+</code>
 </pre></div>
 
  <div class="doc-pagination pt-40">
