@@ -49,7 +49,8 @@ Test environments are referenced using the `--env` cli argument. Since we only h
 
 <pre class="language-bash"><code class="language-bash">npx nightwatch --env chrome-local</code></pre>
 
-```
+<pre class="language-bash" >
+<code class="language-bash">
 ~/workspace/test-project % npx nightwatch --env chrome-local
  
 ┌──────────────────────────────────────────────────────────────────┐
@@ -61,7 +62,8 @@ Test environments are referenced using the `--env` cli argument. Since we only h
 │                                                                  │
 │                                                                  │
 └──────────────────────────────────────────────────────────────────┘
-```
+</code>
+</pre>
 
 ### Define a new "chrome-local" environment
 
@@ -107,8 +109,8 @@ Run the sample and pass the `--env chrome-local` argument:
 <pre class="language-bash"><code class="language-bash">npx nightwatch --env chrome-local</code></pre>
 
 The output will look a bit like this:
-
-```
+<pre class="line-number language-bash">
+<code class="language-bash">
 [sample nightwatch test] Test Suite
 ──────────────────────────────────────────────────────────────────────
 ℹ Connected to ChromeDriver on port 9515 (844ms).
@@ -121,7 +123,8 @@ The output will look a bit like this:
   ✔ Testing if the page title equals 'Home | CERN' (6ms)
 
 OK. 1 assertions passed. (5.604s)
-```
+</code>
+</pre>
 
 ### Recommended content
 - [Concepts > Test environments](/guide/concepts/test-environments.html)

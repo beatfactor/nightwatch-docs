@@ -23,11 +23,15 @@ Refer to the [Configuration > Output settings](/guide/configuration/customising-
 #### Via the CLI
 You can also configure the output folder at runtime via the CLI, using the `--output` flag :
 
-```javascript
+
+<pre class ="language-javascript">
+<code class ="language-javascript">
 module.exports = { 
     output_folder: 'tests_output' 
 }
-```
+</code>
+</pre>
+
 
 
 <pre class="language-bash"><code class="language-bash">nightwatch --output ./tests-output</code></pre>
