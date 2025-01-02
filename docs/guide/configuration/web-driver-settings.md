@@ -10,6 +10,8 @@ Below are a number of options for the Webdriver service. Nightwatch can start an
 
 If you'd like to enable this, set `start_process` to `true` and specify the location of the binary file inside `server_path`.
 
+<div class="container">
+<div class="table-responsive">
 <table class="table table-bordered table-striped">
 <thead>
  <tr>
@@ -159,6 +161,7 @@ If you'd like to enable this, set `start_process` to `true` and specify the loca
 
  </tbody>
 </table>
+</div>
 
 
 ### Recommended content
@@ -184,4 +187,5 @@ If you'd like to enable this, set `start_process` to `true` and specify the loca
         <span>→</span>
     </a>
   </div>
+</div>
 </div>
