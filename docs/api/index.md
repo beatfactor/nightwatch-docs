@@ -4,42 +4,111 @@ This is so that everything is ready to get started with writing the actual test 
 ### The "browser" object
 We are referring to the main API object as `browser` – for consistency with other Selenium related JS test frameworks and also because since v2, it is also available as a `global`:
 
-<div class="sample-test" style="max-width:800px"><pre data-language="javascript" class="language-javascript"><code class="language-javascript">module.exports = {
-  demoTest: function (browser) {
-    browser.init();
+<div class="sample-test" style="max-width:800px; position: relative;">
+  <pre data-language="javascript" class="language-javascript">
+    <code class="language-javascript">module.exports = {
+        demoTest: function (browser) {
+          browser.init();
+        }
+      };
+    </code>
+  </pre>
+  <button class="copy-btn" onclick="copyToClipboard(this)">Copy</button>
+</div>
+
+<style>
+  .copy-btn {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    padding: 8px 12px;
+    background-color: #b5b5b5; /* Green background */
+    color: #000000; /* White text */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
   }
-};
-</code></pre></div>
+
+  /* Hover effect */
+  .copy-btn:hover {
+    background-color: #ffffff; /* Darker green */
+    transform: scale(1.05); /* Slight zoom effect */
+  }
+
+  /* Active state */
+  .copy-btn:active {
+    background-color: #bcbcbc; /* Even darker green */
+    transform: scale(0.95); /* Slight shrink effect */
+  }
+
+  /* Focus state for accessibility */
+  .copy-btn:focus {
+    outline: 2px solid #2e7d32; /* Green outline */
+  }
+</style>
+<script>
+  function copyToClipboard(button) {
+    var code = button.previousElementSibling.querySelector('code').textContent;
+    var textArea = document.createElement('textarea');
+    textArea.value = code;
+    document.body.appendChild(textArea);
+    textArea.select();
+    document.execCommand('copy');
+    document.body.removeChild(textArea);
+
+    // Change button text for feedback
+    button.textContent = 'Copied!';
+    setTimeout(function() {
+      button.textContent = 'Copy';
+    }, 1500);
+  }
+</script>
+
+
+
+
 
 You might also see examples from previous versions of Nightwatch, using `client`. It is of course perfectly fine, although it might be confusing to users who are new to JavaScript syntax. 
 
-<div class="sample-test" style="max-width:800px"><pre data-language="javascript" class="language-javascript"><code class="language-javascript">module.exports = {
-  demoTest: function (client) {
-    client.init();
-  }
-};
-</code></pre></div>
+<div class="sample-test" style="max-width:800px; position: relative;">
+  <pre data-language="javascript" class="language-javascript"><code class="language-javascript">module.exports = {
+    demoTest: function (browser) {
+      browser.init();
+    }
+  };</code>
+  </pre>
+  <button class="copy-btn" onclick="copyToClipboard(this)">Copy</button>
+</div>
+
 
 #### Using as Global
 From Nightwatch 2, `browser` is available as a global, so this is also valid:
 
-<div class="sample-test" style="max-width:800px"><pre data-language="javascript" class="language-javascript"><code class="language-javascript">module.exports = {
-  demoTest: function () {
-    browser.init();
-  }
-};
-</code></pre></div>
+<div class="sample-test" style="max-width:800px; position: relative;">
+  <pre data-language="javascript" class="language-javascript">
+    <code class="language-javascript">module.exports = {
+        demoTest: function () {
+          browser.init();
+        }
+      };</code>
+  </pre>
+  <button class="copy-btn" onclick="copyToClipboard(this)">Copy</button>
+</div>
 
 As well as this:
 
-<div class="sample-test" style="max-width:800px"><pre data-language="javascript" class="language-javascript"><code class="language-javascript">describe('Nightwatch APIs', function() {
+<div class="sample-test" style="max-width:800px; position: relative;"><pre data-language="javascript" class="language-javascript"><code class="language-javascript">describe('Nightwatch APIs', function() {
   it('demoTest', function () {
     browser.init();
   })
 };
-</code></pre></div>
+</code></pre>
+<button class="copy-btn" onclick="copyToClipboard(this)">Copy</button></div>
 
-### API Contents
+### API Content
 
 Below is a list of all public properties and methods that are made available on the `browser` object. 
 
@@ -120,7 +189,7 @@ Below is a list of all public properties and methods that are made available on 
   More on [WebDriver Capabilities](https://developer.mozilla.org/en-US/docs/Web/WebDriver/Capabilities).
   
   ###### Example:
-<div class="sample-test" style="max-width:800px"><pre data-language="javascript" class="language-javascript"><code class="language-javascript">
+<div class="sample-test" style="max-width:800px; position: relative;"><pre data-language="javascript" class="language-javascript"><code class="language-javascript">
   {
     acceptInsecureCerts: false,
     browserName: 'chrome',
@@ -128,7 +197,8 @@ Below is a list of all public properties and methods that are made available on 
     'goog:chromeOptions': { debuggerAddress: 'localhost:50427' },
     // ... continued
   }
-</code></pre></div>
+</code></pre><button class="copy-btn" onclick="copyToClipboard(this)">Copy</button>
+</div>
 
 - #### currentTest
 
@@ -138,7 +208,7 @@ Below is a list of all public properties and methods that are made available on 
 
   ###### Available properties:
 
-<div class="sample-test" style="max-width:800px"><pre data-language="javascript" class="language-javascript"><code class="language-javascript">
+<div class="sample-test" style="max-width:800px; position:relative;"><pre data-language="javascript" class="language-javascript"><code class="language-javascript">
   {
     // name of the current running testcase
     name: ' ... ',
@@ -164,7 +234,9 @@ Below is a list of all public properties and methods that are made available on 
     // the current timestamp, in the format: Wed, 01 Dec 2021 08:34:00 GMT
     timestamp: ''
   }
-</code></pre></div>
+</code></pre><button class="copy-btn" onclick="copyToClipboard(this)">Copy</button>
+</div>
+
 
 - #### desiredCapabilities
 
@@ -174,13 +246,15 @@ Below is a list of all public properties and methods that are made available on 
 
   ###### Example:
 
-<div class="sample-test" style="max-width:800px"><pre data-language="javascript" class="language-javascript"><code class="language-javascript">
+<div class="sample-test" style="max-width:800px; position: relative;"><pre data-language="javascript" class="language-javascript"><code class="language-javascript">
   {
     browserName: 'chrome',
     'goog:chromeOptions': {},
     name: 'Example Test'
   }
-</code></pre></div>
+</code></pre><button class="copy-btn" onclick="copyToClipboard(this)">Copy</button>
+</div>
+
 
 - #### driver
 
@@ -193,7 +267,7 @@ Below is a list of all public properties and methods that are made available on 
 
   In the below example we will retrieve the [WebDriver Session](https://www.selenium.dev/selenium/docs/api/javascript/module/selenium-webdriver/lib/session_exports_Session.html) instance.
 
-<div class="sample-test" style="max-width:800px"><pre data-language="javascript" class="language-javascript"><code class="language-javascript">
+<div class="sample-test" style="max-width:800px; position: relative;"><pre data-language="javascript" class="language-javascript"><code class="language-javascript">
   describe('Nightwatch APIs', function() {
     it('driver demoTest', async function () {
       const session = await browser
@@ -203,7 +277,8 @@ Below is a list of all public properties and methods that are made available on 
         });
     })
   };
-</code></pre></div>
+</code></pre><button class="copy-btn" onclick="copyToClipboard(this)">Copy</button>
+</div>
 
 - #### sessionId
 
@@ -213,9 +288,10 @@ Below is a list of all public properties and methods that are made available on 
 
   ###### Example
 
-<div class="sample-test" style="max-width:800px"><pre data-language="javascript" class="language-javascript"><code class="language-javascript">
+<div class="sample-test" style="max-width:800px; position: relative"><pre data-language="javascript" class="language-javascript"><code class="language-javascript">
   console.log(browser.sessionId); // e0b40362dcec8ec501ac2b42b62bdce2
-</code></pre></div>
+</code></pre><button class="copy-btn" onclick="copyToClipboard(this)">Copy</button>
+</div>
 
 - #### globals
 
