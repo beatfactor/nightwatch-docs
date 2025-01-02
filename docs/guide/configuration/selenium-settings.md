@@ -8,7 +8,8 @@ description: List of Selenium settings in Nightwatch.
 If Selenium Server is being used, then the connection related settings should be placed under the `"selenium""`. If both `webdriver` and `selenium` dictionaries are present, the `selenium` options will be merged with the `webdriver` ones.
 
 The `"selenium"` settings should also be used when configuring connections to cloud-based testing providers.
-
+<div class="container">
+<div class="table-responsive">
 <table class="table table-bordered table-striped">
 <thead>
  <tr>
@@ -81,7 +82,7 @@ The `"selenium"` settings should also be used when configuring connections to cl
  </tr>
  </tbody>
 </table>
-
+</div>
 ### Selenium Example Configuration
 
 Here's an example configuration as part of the `nightwatch.conf.js` which uses a local Selenium Server with support for Firefox, Chrome, and Internet Explorer.
@@ -168,4 +169,5 @@ The following **NPM** packages are assumed to be installed in the current projec
         <span>→</span>
     </a>
   </div>
+</div>
 </div>
