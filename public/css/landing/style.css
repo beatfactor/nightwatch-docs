@@ -3303,7 +3303,12 @@
 }
 
 .footer__wrapper-inner-social-subscribe {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
   padding-top: 32px;
+  margin-bottom: 0;
 }
 
 .footer__wrapper-inner-social-subscribe-title {
@@ -3403,10 +3408,22 @@
   will-change: background, color, border, box-shadow;
 }
 
+
+
 .footer__wrapper-inner-social-links {
+  width: 100%;
   display: flex;
-  gap: 37px;
+  align-items: center;
+  justify-content: center;
+} 
+
+.footer__wrapper-inner-social-links-container{
+  display: flex;
+  justify-content: space-around;
+  gap : 60px;
+  margin-right : 15px;
 }
+
 
 .footer__wrapper-inner-social-links a {
   height: 28px;
@@ -3459,10 +3476,22 @@
     margin: unset;
   }
 
+
   .footer__wrapper-inner-social {
     display: flex;
     flex-wrap: wrap;
-    width: 80vw;
+    width: 100%;
+  }
+
+  .footer__wrapper-inner-social-subscribe{
+    margin-bottom: 32px;
+  }
+  .footer__wrapper-inner-social-subscribe-title{
+    align-self: center;
+  }
+
+  iframe[title="nightwatch-substack"]{
+    width: 100%;
   }
 
   .footer__wrapper-inner-social-links {
@@ -3528,6 +3557,13 @@
 
   .footer__wrapper-bottom-text {
     width: 72%;
+  }
+}
+
+
+@media (min-width : 1070px) {
+  .footer__wrapper-inner-social-links-container{
+    gap : 40px;
   }
 }
 
