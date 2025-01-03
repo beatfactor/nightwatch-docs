@@ -97,8 +97,6 @@ Below is a list of all public properties and methods that are made available on 
 
   Type: `string`
 
-  Returns `true`|`false` whether or not the browser used is Opera.
-
   The value of `baseUrl` as defined in the Nightwatch config and which will be used as the default url for the command `.init()`.
   Other aliases are: `base_url`, `launch_url`, or `launchUrl`.
 
