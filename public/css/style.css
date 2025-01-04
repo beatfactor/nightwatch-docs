@@ -3372,3 +3372,8 @@ p.bottom-text {
 }
 
 /* Footer section end */
+
+/* added word break for links below full changelog heading*/
+.list-group-item p:nth-last-of-type(2) {
+  word-break: break-word !important;
+}
