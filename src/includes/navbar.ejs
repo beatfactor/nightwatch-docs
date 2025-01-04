@@ -190,3 +190,34 @@
       </ul>
     </div>
   </nav>
+
+  <script>
+    document.getElementById("mobileMenuToggle").addEventListener("click", function() {
+        var mobileNav = document.querySelector(".mobile-navbar-content");
+        if (mobileNav.style.display === "none" || mobileNav.style.display === "") {
+            mobileNav.style.display = "block";  // Show the nav
+        } else {
+            mobileNav.style.display = "none";  // Hide the nav
+        }
+    });
+
+    document.addEventListener('DOMContentLoaded', function() {
+      // Check if the screen width is 991px or less
+      if (window.innerWidth <= 991) {
+        // Select the navbar and doc-sidebar elements
+        var navbar = document.querySelector('.navigation');
+        var doc_sidebar = document.querySelector('.doc-sidebar');
+        var doc_sidebar_nav = document.querySelector('#doc-sidebar-nav');
+
+        // Check if both elements exist before accessing their properties
+        if (navbar && doc_sidebar) {
+          // Adjust the top position of the doc-sidebar based on the navbar's height
+          doc_sidebar.style.top = navbar.clientHeight + 'px';
+          doc_sidebar_nav.style.top = navbar.clientHeight + 'px';
+          doc_sidebar_nav.style.maxHeight=(window.innerHeight -navbar.clientHeight) + 'px';
+          doc_sidebar_nav.style.height=(window.innerHeight -navbar.clientHeight) + 'px';
+        }
+      }
+    });
+
+</script>

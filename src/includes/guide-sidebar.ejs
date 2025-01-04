@@ -262,7 +262,7 @@ const navItems = [
 %>
 
 <div class="clearfix">
-    <button class="btn btn-link d-md-none collapsed" type="button" data-bs-toggle="collapse"
+    <button class="btn btn-link d-lg-none collapsed" type="button" data-bs-toggle="collapse"
             data-bs-target="#doc-sidebar-nav" aria-controls="doc-sidebar-nav" aria-expanded="false"
             aria-label="Toggle docs navigation">
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-border-width"
@@ -315,38 +315,65 @@ const navItems = [
 </nav>
 
 <script type="module">
-  import {onRender, onLeave} from 'postdoc/page';
+    import {onRender, onLeave} from 'postdoc/page';
 
-  onRender((url) => {
+    onRender((url) => {
+    // Log the URL and activeLink for debugging
+    console.log('Current URL:', url.pathname);
+
     const activeLink = document.querySelector(`.nav .btn-toggle-nav a[href$="${url.pathname}"]`);
+    console.log('Active link:', activeLink); // Log the active link to see if it's found
 
+    // Log all collapses
     document.querySelectorAll('.nav .collapse.show').forEach(function(collapse) {
-      collapse.classList.remove('show');
+        console.log('Collapsing:', collapse); // Log each collapse being closed
 
-      const button = collapse.previousElementSibling;
-      if (button) {
+        collapse.classList.remove('show');
+
+        const button = collapse.previousElementSibling;
+        if (button) {
         button.classList.add('collapsed');
         button.setAttribute('aria-expanded', 'false');
-      }
+        console.log('Button collapsed:', button); // Log the button being collapsed
+        }
     });
 
-
     if (activeLink) {
-      activeLink.classList.add('active');
+        activeLink.classList.add('active');
+        console.log('Active link marked as active:', activeLink); // Log when active link is marked
 
-      let parentElement = activeLink.parentElement;
-      while (parentElement) {
+        let parentElement = activeLink.parentElement;
+        while (parentElement) {
+        console.log('Parent element:', parentElement); // Log each parent element
+
         if (parentElement.matches('.collapse')) {
-          parentElement.classList.add('show');
-          const parentButton = parentElement.previousElementSibling;
-          if (parentButton && parentButton.matches('button')) {
+            parentElement.classList.add('show');
+            const parentButton = parentElement.previousElementSibling;
+            if (parentButton && parentButton.matches('button')) {
             parentButton.classList.remove('collapsed');
             parentButton.setAttribute('aria-expanded', 'true');
-          }
+            console.log('Parent button expanded:', parentButton); // Log the parent button being expanded
+            }
         }
         parentElement = parentElement.parentElement; // Move up to the next parent element
-      }
+        }
     }
-  }, {forPage: /(\/guide\/)/});
+    }, {forPage: /(\/guide\/)/});
 
+
+</script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+  console.log('DOM content loaded');  // This ensures the DOM is fully loaded
+
+  const sidebar = document.querySelector('#doc-sidebar-nav');
+  console.log('Sidebar found:', sidebar);  // Logs if sidebar is found
+  
+  if (sidebar) {
+    sidebar.classList.remove('show');
+    console.log('Sidebar hidden');  // Confirm sidebar is hidden
+  } else {
+    console.log('Sidebar element not found');  // This will log if the sidebar is not in the DOM
+  }
+});
 </script>
