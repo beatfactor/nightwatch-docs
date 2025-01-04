@@ -46,8 +46,8 @@ Nightwatch also can be integrated with cloud-based testing platforms like [Brows
 ### Supported browsers
 
 WebDriver is implemented by all major browser vendors as a W3C compliant HTTP service.
-
-<table class="table table-bordered table-striped">
+<div style="overflow-x:auto">
+<table class="table table-bordered table-striped w-100">
 <thead>
  <tr>
    <th style="width: 200px;">Browser Driver</th>
@@ -84,6 +84,7 @@ WebDriver is implemented by all major browser vendors as a W3C compliant HTTP se
 
  </tbody>
 </table>
+</div>
 
 [1]:    https://nodejs.org/
 [2]:    https://www.w3.org/TR/webdriver/

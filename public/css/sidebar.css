@@ -74,7 +74,7 @@
 }
 
 .bs-sidebar .nav {
-  display: block;
+  display: block !important;
 }
 
 .doc-sidebar {
@@ -87,7 +87,7 @@
   display: none;
 }
 
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 992px) {
   .doc-sidebar {
     border: none;
     background: #f5f5f5;
