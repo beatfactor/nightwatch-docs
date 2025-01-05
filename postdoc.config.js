@@ -41,7 +41,7 @@ export default {
   },
 
   apidocs: {
-    source: API_DOCS_FOLDER,
+    source: false,
     layout: 'api/index.ejs',
 
     createUrl(filePath) {
