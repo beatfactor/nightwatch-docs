@@ -3482,6 +3482,15 @@
   .footer__wrapper-inner-social {
     display: inherit;
     flex: inherit;
+    justify-content: center;
+  }
+  .footer__wrapper-inner-social-subscribe {
+    text-align: center;
+  }
+  .footer__wrapper-inner-social-logo {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
   }
 
   .footer__wrapper-inner-social-links {
