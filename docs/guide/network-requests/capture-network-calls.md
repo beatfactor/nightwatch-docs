@@ -72,8 +72,7 @@ All you need to do is call the `browser.captureNetworkRequests()` command with t
 
 Output from one of the network calls in the example above:
 
-```
-  Running Capture network calls:
+<pre class="hide-indicator"><code class="language-bash">Running Capture network calls:
 ───────────────────────────────────────────────────────────────────────────────────────────────────
 Request Number: 35
 Request URL: https://www.google.com/favicon.ico
@@ -94,7 +93,7 @@ Request headers: {
   'sec-ch-ua-model': '',
   'sec-ch-ua-platform': '"macOS"'
 }
-```
+</code></pre>
 
 ### Recommended content
 - [Chrome DevTools Protocol in Selenium 4](https://www.selenium.dev/documentation/webdriver/bidirectional/chrome_devtools/)

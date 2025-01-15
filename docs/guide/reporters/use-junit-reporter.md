@@ -34,13 +34,9 @@ Refer to the [CLI reference page](/guide/nightwatch-cli/command-line-options.htm
 
 The XML file name follows the pattern:
 
-<div class="hide-indicator"><pre>
-
-```
-<BROWSER>_<VERSION>__<testSuiteFileName>.xml
-```
-
-</pre></div>
+<pre class="hide-indicator">
+<code class="language-bash">&lt;BROWSER&gt;_&lt;VERSION&gt;__&lt;testSuiteFileName&gt;.xml
+</code></pre>
 
 ### Example
 
@@ -87,27 +83,23 @@ To generate both the built-in JUnit-XML and HTML reports, run the following comm
 
 The JUnit XML report should have been generated in the local `tests_output` folder inside the current project directory. It will look something like this:
 
-<div class="hide-indicator"><pre>
-
-```
-<?xml version="1.0" encoding="UTF-8" ?>
-<testsuites errors="0"
+<pre class="language-xml hide-indicator">
+<code class ="language-xml">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;testsuites errors="0"
             failures="0"
-            tests="1">
+            tests="1"&gt;
 
-  <testsuite name="duckDuckGo"
+  &lt;testsuite name="duckDuckGo"
     errors="0" failures="0" hostname="" id="" package="duckDuckGo" skipped="0"
-    tests="1" time="2.007" timestamp="">
-  
-    <testcase name="Search Nightwatch.js and check results" classname="duckDuckGo" time="2.007" assertions="3">
-    </testcase>
-  </testsuite>
+    tests="1" time="2.007" timestamp=""&gt;
 
-</testsuites>
-</pre>
-```
+    &lt;testcase name="Search Nightwatch.js and check results" classname="duckDuckGo" time="2.007" assertions="3">
+    &lt;/testcase&gt;
 
-</pre></div>
+  &lt;/testsuite&gt;
+
+&lt;/testsuites&gt;
+</code></pre>
 
 ### Jenkins integration
 JUnit-formatted XML output integrates by default into Jenkins via the "Publish JUnit test result report" Post-build Action. 

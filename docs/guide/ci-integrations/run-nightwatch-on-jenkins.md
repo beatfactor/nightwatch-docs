@@ -56,12 +56,10 @@ In order to run your tests on BrowserStack from Jenkins, setup the environment v
 
 Setup the following 2 environment variables
 
-```
-
-BROWSERSTACK_USERNAME
+<pre class="hide-indicator"><code class="language-bash">BROWSERSTACK_USERNAME
 BROWSERSTACK_ACCESS_KEY
+</code></pre>
 
-```
 
 ![Jenkins BrowserStack](https://user-images.githubusercontent.com/1677755/177569029-da96b37d-6377-404f-9562-315d0694997d.png)
 
