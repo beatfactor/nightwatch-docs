@@ -74,16 +74,11 @@ All you need to do is call the `browser.captureBrowserConsoleLogs()` command wit
 
 Output of the example above:
 
-
-<pre class="line-numbers language-bash">
-<code class="language-bash">
-  Running Capture console messages:
-───────────────────────────────────────────────────────────────────────────────────────────────────
+<pre class="hide-indicator"><code class="language-bash">Running Capture console messages:
+─────────────────────────────────────────────────────────────────────────────────
 error 2022-06-10T13:38:22.082Z here
 No assertions ran.
-</code>
-</pre>
-
+</code></pre>
 
 ### Recommended content
 - [Capture Browser JS Exceptions](/guide/running-tests/catch-js-exceptions.html)

@@ -67,10 +67,8 @@ Use the `browser.captureBrowserExceptions()` command with the required parameter
 
 Output of the example above:
 
-<pre class= "line-numbers language-bash">
-<code class= "language-bash">
-  Running captureBrowserExceptions():
-───────────────────────────────────────────────────────────────────────────────────────────────────
+<pre class="hide-indicator"><code class="language-bash">Running captureBrowserExceptions():
+────────────────────────────────────────────────────────────────────────────────
 {
   exceptionDetails: {
     exceptionId: 1,

@@ -49,10 +49,8 @@ Test environments are referenced using the `--env` cli argument. Since we only h
 
 <pre class="language-bash"><code class="language-bash">npx nightwatch --env chrome-local</code></pre>
 
-<pre class="language-bash" >
+<pre class="hide-indicator">
 <code class="language-bash">
-~/workspace/test-project % npx nightwatch --env chrome-local
- 
 ┌──────────────────────────────────────────────────────────────────┐
 │                                                                  │
 │    Error: Invalid testing environment specified: chrome-local.   │
@@ -109,16 +107,14 @@ Run the sample and pass the `--env chrome-local` argument:
 <pre class="language-bash"><code class="language-bash">npx nightwatch --env chrome-local</code></pre>
 
 The output will look a bit like this:
-<pre class="line-number language-bash">
-<code class="language-bash">
-[sample nightwatch test] Test Suite
+<pre class="hide-indicator"><code class="language-bash">[sample nightwatch test] Test Suite
 ──────────────────────────────────────────────────────────────────────
 ℹ Connected to ChromeDriver on port 9515 (844ms).
   Using: chrome (101.0.4951.64) on MAC OS X.
 
 
   Running opens the browser and checks for input:
-────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+──────────────────────────────────────────────────────────────────────
   ℹ Loaded url https://home.cern in 5531ms
   ✔ Testing if the page title equals 'Home | CERN' (6ms)
 

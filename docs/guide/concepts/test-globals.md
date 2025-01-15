@@ -202,9 +202,8 @@ Pass the `--env integration` option to the runner:
 
 Then our globals object will look like:
 
-```
-myGlobalVar is: "integrated global"
-```
+<pre class="hide-indicator"><code class="language-bash">myGlobalVar is: "integrated global"
+</code></pre>
 
 ### Recommended content
 - [Use external globals in tests](/guide/writing-tests/using-test-globals.html)
