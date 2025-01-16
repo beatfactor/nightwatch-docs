@@ -314,7 +314,25 @@ const updatePreStyle = () => {
   });
 };
 
+// P1524
+const addCopyButtonFunctionality = () => {
+  const copyButtons = document.querySelectorAll('.copy-button');
 
+  copyButtons.forEach(button => {
+    button.addEventListener('click', async () => {
+      const codeSnippet = button.previousElementSibling.textContent;
+      try {
+        await navigator.clipboard.writeText(codeSnippet);
+        button.textContent = 'Copied!';
+        setTimeout(() => {
+          button.textContent = 'Copy';
+        }, 2000);
+      } catch (err) {
+        console.error('Failed to copy: ', err);
+      }
+    });
+  });
+};
 
 // Main actions
 onRender((url) => {
@@ -333,6 +351,8 @@ onRender((url) => {
   renderCodeTabs();
 
   updatePreStyle();
+
+  addCopyButtonFunctionality(); // P1c5e
 
   if (currentPage === 'guide') {
     const sidebarFilter = document.querySelector('#sidebar-filter');

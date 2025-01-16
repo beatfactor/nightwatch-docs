@@ -1962,7 +1962,7 @@ div.code-toolbar>.toolbar>.toolbar-item>button[data-copy-state="copy-success"] {
 }
 
 .dev-experience p a {
-  color: var(--dark--orange);
+  color: var (--dark--orange);
 }
 
 .row.dev-experience-container {
@@ -2498,7 +2498,7 @@ section.secondary h1.community-support-title {
 
 .docs-section p {
   margin: 15px 0 25px;
-  font-family: var(--font-family-primary);
+  font-family: var (--font-family-primary);
   font-size: 16px;
   line-height: 28px;
 }
@@ -3370,3 +3370,40 @@ p.bottom-text {
 }
 
 /* Footer section end */
+
+/* P4be8 */
+.copy-button {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  font-size: 14px;
+  border-radius: 4px;
+  margin-left: 10px;
+}
+
+/* Pdfc6 */
+.tooltip {
+  visibility: hidden;
+  width: 120px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%; /* Position the tooltip above the button */
+  left: 50%;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.copy-button:hover .tooltip {
+  visibility: visible;
+  opacity: 1;
+}

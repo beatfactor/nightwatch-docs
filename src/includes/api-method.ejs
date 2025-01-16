@@ -46,6 +46,7 @@
                 <pre class="language-javascript" style="padding-top: 10px; margin-bottom: 10px">
                     <code class="language-javascript"><%- syntax.replace(', callback', ', [callback]') %></code>
                 </pre>
+                <button class="copy-button">Copy <span class="tooltip">Copy to clipboard</span></button>
             </div>
         <% }); %>
     <% } %>
@@ -57,12 +58,14 @@
             <% if (method.example.length) { %>
                 <% for (let example of method.example) { %>
                     <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><%= example %></code></pre>
+                    <button class="copy-button">Copy <span class="tooltip">Copy to clipboard</span></button>
                 <% } %>
             <% } %>
 
             <% if (method.tsexample.length) { %>
                 <% for (let example of method.tsexample) { %>
                     <pre class="line-numbers language-typescript" data-language="typescript"><code class="language-typescript"><%= example %></code></pre>
+                    <button class="copy-button">Copy <span class="tooltip">Copy to clipboard</span></button>
                 <% } %>
             <% } %>
             </div>
@@ -82,6 +85,7 @@
 cd nightwatch-examples
 npm install
 npx nightwatch <%- method.exampleLink %></code></pre>
+        <button class="copy-button">Copy <span class="tooltip">Copy to clipboard</span></button>
         </div>
 
         <a target="_blank" href="https://github.com/nightwatchjs/nightwatch-examples"><button>View on Github</button></a>
