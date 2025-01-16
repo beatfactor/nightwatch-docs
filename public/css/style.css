@@ -1272,16 +1272,16 @@ html {
 
 #doc-sidebar-nav {
   max-height: 100vh;
-  /* overflow-y: scroll; */
+  overflow-y: scroll;
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 992px) {
   #doc-sidebar-nav {
-    display: block !important;
+    display: block !important; /* Show sidebar as block */
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 991px) {
   #doc-sidebar-nav {
     position: fixed;
     top: 79px;
@@ -1291,7 +1291,9 @@ html {
     width: 280px;
     border-left: 1px solid #E1E6EE;
     padding: 30px 15px 10px;
+    height: 100%;
     max-height: calc(100vh - 79px);
+    overflow-y: auto;
   }
 
   #doc-sidebar-nav .nav.bs-sidenav li .btn {
@@ -3370,3 +3372,8 @@ p.bottom-text {
 }
 
 /* Footer section end */
+
+/* added word break for links below full changelog heading*/
+.list-group-item p:nth-last-of-type(2) {
+  word-break: break-word !important;
+}
