@@ -74,7 +74,7 @@ The methods are defined in the external `globals` file and invoked using the `gl
     return Promise.resolve();
   },
   <br>
-  // Called right before the command .quite() is finished
+  // Called right before the command .quit() is finished
   async onBrowserQuit(browser) {
     return Promise.resolve();
 };</code></pre></div>
