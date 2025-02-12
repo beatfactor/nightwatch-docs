@@ -43,6 +43,7 @@ export default {
   apidocs: {
     source: API_DOCS_FOLDER,
     layout: 'api/index.ejs',
+    source: '/path/to/nightwatch/lib/api/',
 
     createUrl(filePath) {
       const fileName = basename(filePath, extname(filePath));
