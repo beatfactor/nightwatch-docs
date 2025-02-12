@@ -1244,12 +1244,11 @@ html {
 .doc-sideNav {
   top: 50px;
   padding-top: 50px;
-  position: sticky;
+  /* position: static; */
   height: 100%;
   padding-right: 0;
   padding-left: 0;
 }
-
 .doc-sideNav ul {
   list-style-type: none;
   padding-left: 20px;
@@ -2474,6 +2473,7 @@ section.secondary h1.community-support-title {
 
 .doc-container.full-width .doc-main-body {
   border-right: 1px solid #F6F6F6;
+  max-width: 60%;
 }
 
 .doc-main-body h1,
